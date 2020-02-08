@@ -1,10 +1,15 @@
 package com.epam1.maven1;
-import items_in_a_gift.*;
+import items_in_a_gift.Sweets;
+import items_in_a_gift.Chocolates;
+import items_in_a_gift.Candies;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Gift_range {
+	
 
 	public Gift_range() {
+		
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -29,20 +34,12 @@ public class Gift_range {
 			System.out.println(k.toString());
 		}
 	}
-	public static void Cal_Range_of_Candies(ArrayList<Candies> candy,int type)
+	public static void Cal_Range_of_Candies(ArrayList<Candies> candy,int lower_cost,int lower_weight,int upper_cost,int upper_weight)
 	{
-		Scanner sc=new Scanner(System.in);
-		if(type==1)
-		{
-			int lower_cost;
-			int higher_cost;
-			int j=0;
-			System.out.println("enter the upper and lower bounds of the cost:");
-			lower_cost=sc.nextInt();
-			higher_cost=sc.nextInt();
+		    int j=0;
 			for(Candies c : candy)
 			{
-				if(c.getCost()>=lower_cost && c.getCost()<=higher_cost)
+				if(c.getCost()>=lower_cost && c.getCost()<=upper_cost)
 				{
 					System.out.println(c.toString());
 					j++;
@@ -50,18 +47,11 @@ public class Gift_range {
 			}
 			if(j==0)
 			 System.out.println("there are no candies in the range of cost given");
-		}
-		else
-		{
-			int lower_weight;
-			int higher_weight;
-			int j=0;
-			System.out.println("enter the upper and lower bounds of the weight:");
-			lower_weight=sc.nextInt();
-			higher_weight=sc.nextInt();
+		    j=0;
+            System.out.println("the candies upper and lower bounds of the weight:");
 			for(Candies c : candy)
 			{
-				if(c.getWeight()>=lower_weight && c.getWeight()<=higher_weight)
+				if(c.getWeight()>=lower_weight && c.getWeight()<=upper_weight)
 				{
 					System.out.println(c.toString());
 					j++;
@@ -69,6 +59,11 @@ public class Gift_range {
 			}
 			if(j==0)
 			 System.out.println("there are no candies in the range of weight given");
-		}
+		
+		
+	    
+	    
+		
+		
 	}
 }

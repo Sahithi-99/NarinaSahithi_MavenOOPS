@@ -24,11 +24,11 @@ public class New_year_gift
     	{
     		
     	New_year_gift gift=new New_year_gift();
-		int choice,w,c;
-		String ch="Yes",s;
+		int choice,w,c,ch=1;
+		String s;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("------***Happy NEW YEAR***------");
-		while(ch!="No")
+		while(ch!=0)
 		{
 			System.out.println("1.To add a sweets"+"\n"+"2.To add a chocolates"+"\n"+"3.To add a candies");
 			System.out.println("Enter your choice");
@@ -61,12 +61,11 @@ public class New_year_gift
                break; 
         default:System.out.println("you have entered an invalid choice");       
 		}
-		System.out.println("Do you want to continue");
-		ch=sc.nextLine();
+		System.out.println("Do you want to continue:");
+		ch=sc.nextInt();
 		}
 		sc.close();
-	
-    	System.out.println("the contents of the gift are:");
+	    System.out.println("the contents of the gift are:");
 		Gift_range m=new Gift_range();
 		System.out.println("the candies are:");
 		m.printCandies(gift.candy);
@@ -78,7 +77,7 @@ public class New_year_gift
 		System.out.println("Total cost of the gift:"+gift.total_cost_of_gift);
 		System.out.println("Total weight of the gift:"+gift.total_weight_of_gift);
 		System.out.println("calculating the range of Candies:");
-		Gift_range.Cal_Range_of_Candies(gift.candy,1);
+		Gift_range.Cal_Range_of_Candies(gift.candy,30,40,50,89);
 		System.out.println("sorting the chooclates in the gift by means of criteria");
 		gift.sorting_of_chocolates(gift.chocolate);
 		m.printChocolates(gift.chocolate);

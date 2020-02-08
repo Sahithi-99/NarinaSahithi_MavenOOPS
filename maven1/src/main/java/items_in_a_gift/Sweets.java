@@ -12,7 +12,7 @@ public class Sweets extends Gift_properties implements Comparable<Sweets>,Getmet
 	//Implementing the "abstract" methods of super class
 	public String toString()
 	{
-		return("Chocolate:["+ this.name + "," + this.weight + "," + this.cost + "]");
+		return("Sweet:["+ this.name + "," + this.weight + "," + this.cost + "]");
 	}
 	@Override
 	public int compareTo(Sweets o) {
